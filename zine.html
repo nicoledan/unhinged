@@ -236,8 +236,8 @@
             width: 100%;
         }
 
-        #hg-logo {
-            height: 50px;
+        #logo {
+            height: 40px;
             width: auto;
         }
 
@@ -425,6 +425,13 @@
         .social-footer a:hover { transform: translateY(-2px); opacity: 0.85; }
 
         .social-footer svg { width: 20px; height: 20px; }
+        /* styling for hater/lover back page
+        */
+        #hater_lover {
+            max-width: 500px;
+            width: 100%;
+            margin: auto;
+        }
 
     </style>
     <meta property="og:image" content="https://raw.githubusercontent.com/nicoledan/unhinged/main/preview.png" />
@@ -458,15 +465,24 @@
         <div id="loading">loading zine...</div>
     </div>
 
+    <!-- flipping to hater/lover graphic -->
+     <div id="zine-back">
+        <img id="hater_lover" src="hater_lover.png">
+    </div>
+
+    <!-- end of hater/lover graphic -->
+
+
     <div id="subscribe-bar">
         <button id="flip-btn" onclick="handleFlip()">unfold &amp; see the reverse ✨</button>
         <div id="cut-line">✂ - - - - ✂ - - - - ✂ - - - - ✂</div>
     </div>
 
     <div id="bottom-bar">
-        <img src="https://raw.githubusercontent.com/365hockeygirl/pwhl-quiz/main/365HGWhite.png" alt="365 Hockey Girl" id="hg-logo">
+        <img src="favicon.png" alt="Unhinged" id="logo">
         <a href="https://raw.githubusercontent.com/365hockeygirl/pwhl-rules-zine/main/rules_zine_final.pdf" download="PWHL-Rules-Zine.pdf" target="_blank" rel="noopener">download the zine 📄</a>
-        <a href="https://365hockeygirl.beehiiv.com/p/365-the-zine" target="_blank" rel="noopener">Folding instructions in my newsletter! 💌</a>
+        <a href="#" target="_blank" rel="noopener">folding instructions</a>
+        <a href="#" target="_blank" rel="noopener">text only version</a>
         <a href="https://365hockeygirl.github.io/pwhl-quiz/pwhl-team-picker.html" target="_blank" rel="noopener" id="quiz-link">🔮 PWHL personality quiz!</a>
         <div class="social-footer">
             <a href="https://www.instagram.com/365_hockeygirl/" target="_blank" aria-label="Instagram">
@@ -571,7 +587,8 @@ function loadZine(folder) {
 }
 //hide sparkles on load
 document.getElementById('sparkle-canvas').style.display = 'none';
-
+//hide zine-back on load
+document.getElementById('zine-back').style.display = 'none';
 
 let lastReverse = 'blue'; // so first flip gives red
 

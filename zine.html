@@ -21,6 +21,34 @@
             height: 100%;
             width: 100%;
         }
+        /* crinkle paper animation */
+
+        .container {
+            overflow: hidden;
+        }
+
+        .sliding-background {
+            background: url("crinkled_paper_background_pink.png") repeat-x;
+            height: 560px;
+            width: 5076px;
+            animation: slide 60s linear infinite;
+            bottom:0;
+            left:-50%;
+            opacity:.5;
+            position:fixed;
+            right:-50%;
+            top:0;
+            z-index: 0;
+        }
+
+        @keyframes slide{
+            0% {
+                transform: translate3d(0, 0, 0);
+            }
+            100% {
+                transform: translate3d(-1692px, 0, 0);
+            }
+        }
 
         #sparkle-canvas {
             position: fixed;
@@ -397,6 +425,7 @@
         .social-footer a:hover { transform: translateY(-2px); opacity: 0.85; }
 
         .social-footer svg { width: 20px; height: 20px; }
+
     </style>
     <meta property="og:image" content="https://raw.githubusercontent.com/nicoledan/unhinged/main/preview.png" />
     <meta property="og:url" content="https://nicoledan.github.io/unhinged/zine.html" />
@@ -406,6 +435,16 @@
 <body>
 
 <canvas id="sparkle-canvas"></canvas>
+
+
+<!-- open container for wrapper animation -->
+<div class="container">
+<div class="sliding-background">
+   
+</div>
+</div>
+<!-- close container for wrapper animation -->
+
 
 <div id="wrapper">
     <div id="zine-title">Unhinged Zine ✨</div>
@@ -442,7 +481,10 @@
         </div>
         <div style="height: 40px;"></div>
     </div>
+
 </div>
+
+
 
 <script>
 // ============================================================

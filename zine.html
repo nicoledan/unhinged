@@ -8,13 +8,15 @@
     <meta property="og:description" content="A zine about online dating" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" href="https://raw.githubusercontent.com/nicoledan/unhinged/main/favicon.png" type="image/png" />
-    <link href="https://fonts.googleapis.com/css2?family=Lora:wght@400;600&family=Inter:wght@400;500&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
     <style>
         * { box-sizing: border-box; margin: 0; padding: 0; }
 
         html, body {
             background: #000;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Roboto Mono', sans-serif;
             overflow: hidden;
             height: 100%;
             width: 100%;
@@ -40,7 +42,7 @@
         }
 
         #zine-title {
-            font-family: 'Lora', serif;
+            font-family: 'Roboto Mono', serif;
             font-size: 26px;
             font-weight: 600;
             color: #fff;
@@ -51,7 +53,7 @@
         }
 
         #zine-subtitle {
-            font-family: 'Inter', sans-serif;
+            font-family: 'Roboto Mono', sans-serif;
             font-size: 13px;
             color: rgba(255,255,255,0.6);
             text-align: center;
@@ -447,7 +449,7 @@
 // SETTINGS
 // ============================================================
 const TEMPLATE = 4;   // 1=8pg, 2=12pg, 3=14pg, 4=16pg, 5=24pg, 6=26pg, 7=32pg, 8=64pg
-const ALT      = "What's Going On? A PWHL Rules Zine";
+const ALT      = "Unhinged, Volume 1";
 const SMOOTH   = false;
 
 // ============================================================
@@ -517,7 +519,7 @@ function loadZine(folder) {
 
         activeFolder = folder;
         const btn = document.getElementById('flip-btn');
-        btn.textContent = folder === 'pages' ? 'unfold & see the reverse ✨' : 'flip back to the front ✨';
+        btn.textContent = folder === 'pages' ? 'unfold & see the reverse ✨' : 'refold the zine ✨';
         hideOverlay();
     })
     .catch(err => {
@@ -525,6 +527,9 @@ function loadZine(folder) {
         ZINE_CONTAINER.innerHTML = '<div id="loading">Something went wrong! Make sure your images are in the pages folder.</div>';
     });
 }
+//hide sparkles on load
+document.getElementById('sparkle-canvas').style.display = 'none';
+
 
 let lastReverse = 'blue'; // so first flip gives red
 
@@ -532,6 +537,7 @@ function handleFlip() {
     const overlay = document.getElementById('flip-overlay');
     const overlayText = document.getElementById('flip-overlay-text');
 
+    document.getElementById('sparkle-canvas').style.display='inline';
     overlay.classList.add('active');
     overlayText.classList.remove('typing');
     void overlayText.offsetWidth;
@@ -557,6 +563,8 @@ function hideOverlay() {
     if (overlay) overlay.classList.remove('active');
     sparkleRush = false;
     sparkleCanvas.style.zIndex = 0;
+    //removes the sparkle after the transition
+    document.getElementById('sparkle-canvas').style.display = 'none';
 }
 
 // Initial load
@@ -608,6 +616,8 @@ const sparkleCanvas = document.getElementById('sparkle-canvas');
 const sparkleCtx    = sparkleCanvas.getContext('2d');
 let sparkles = [];
 let sparkleRush = false;
+
+
 
 function resizeCanvas() {
     sparkleCanvas.width  = window.innerWidth;

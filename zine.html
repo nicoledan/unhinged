@@ -31,7 +31,7 @@
             background: url("crinkled_paper_background_pink.png") repeat-x;
             height: 560px;
             width: 5076px;
-            animation: slide 60s linear infinite;
+            animation: slide 240s linear infinite;
             bottom:0;
             left:-50%;
             opacity:.5;
@@ -454,15 +454,15 @@
 
 
 <div id="wrapper">
-    <div id="zine-title">Unhinged Zine ✨</div>
-    <div id="zine-subtitle">click a page to flip it!</div>
+    <h1 id="zine-title">Unhinged Zine ✨</h1>
+    <h2 id="zine-subtitle">click a page to flip it!</h2>
 
     <div id="flip-overlay">
-        <div id="flip-overlay-text">unfolding and refolding...</div>
+        <p id="flip-overlay-text">unfolding and refolding...</p>
     </div>
 
     <div id="zine-container">
-        <div id="loading">loading zine...</div>
+        <p id="loading">loading zine...</>
     </div>
 
     <!-- flipping to hater/lover graphic -->
@@ -535,7 +535,7 @@ function getTextures(folder) {
 }
 
 function loadZine(folder) {
-    ZINE_CONTAINER.innerHTML = '<div id="loading">loading zine...</div>';
+    ZINE_CONTAINER.innerHTML = '<p id="loading">loading zine...</p>';
     current_state = 0;
     pages = [];
 
@@ -590,6 +590,12 @@ document.getElementById('sparkle-canvas').style.display = 'none';
 //hide zine-back on load
 document.getElementById('zine-back').style.display = 'none';
 
+// new flipping function for hater/lover graphic
+//function flipBack() {
+//    const btn = document.getElementById('flip-btn');
+//    btn.textContent = folder === 'pages' ? 'unfold & see the reverse ✨' : 'refold the zine ✨';
+//}
+
 let lastReverse = 'blue'; // so first flip gives red
 
 function handleFlip() {
@@ -642,6 +648,7 @@ document.addEventListener('pointerup', function(event) {
 
 function getPages(state) {
     return [pages[state * 2], pages[state * 2 + 1]].filter(i => i);
+    // added for flipping zine zine = "visible"
 }
 function replaceTransformPerPage(state, search, replace) {
     getPages(state).forEach(page => { page.style.transform = page.style.transform.replace(search, replace); });

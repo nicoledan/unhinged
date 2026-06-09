@@ -10,7 +10,7 @@ html, body {
     }
 
 a:hover, button:hover {
-    cursor: url('cursors/cursor_3.png'), pointer;
+    cursor: url('cursors/cursor_3.png') 4 4, pointer;
 }
 
 /* crinkle paper animation */

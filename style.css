@@ -6,13 +6,15 @@ html, body {
     overflow: hidden;
     height: 100%;
     width: 100%;
-    cursor: url('cursors/cursor_4.png') 4 4, auto;
+    cursor: url('cursors/pink.png') 4 4, auto;
     }
 
-a:hover, button:hover {
-    cursor: url('cursors/cursor_3.png') 4 4, pointer;
+/* a:hover, button:hover {
+    cursor: url('cursors/pink-hover.png') 4 4, pointer;
+}*/
+a, button { 
+    cursor: url('cursors/pink-hover.png'), pointer !important; 
 }
-
 /* crinkle paper animation */
 
 

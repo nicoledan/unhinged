@@ -1,88 +1,3 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Unhinged Zine</title>
-    <meta property="og:title" content="Unhinged Zine" />
-    <meta name="description" content="A zine about online dating" />
-    <meta property="og:description" content="A zine about online dating" />
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" href="https://raw.githubusercontent.com/nicoledan/unhinged/main/favicon.png" type="image/png" />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
-    <meta property="og:image" content="https://raw.githubusercontent.com/nicoledan/unhinged/main/preview.png" />
-    <meta property="og:url" content="https://nicoledan.github.io/unhinged/zine.html" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:image" content="https://raw.githubusercontent.com/nicoledan/unhinged/main/preview.png" />
-    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
-</head>
-<body>
-
-<canvas id="sparkle-canvas"></canvas>
-
-
-<!-- open container for wrapper animation -->
-<div class="container">
-<div class="sliding-background">
-   
-</div>
-</div>
-<!-- close container for wrapper animation -->
-
-
-<div id="wrapper">
-    <h1 id="zine-title">Unhinged Zine ✨</h1>
-    <h2>click a page to flip it!</h2>
-    <h2><a href="">click here for static pages with alt text</a></h2>
-
-    <div id="flip-overlay">
-        <p id="flip-overlay-text">unfolding and refolding...</p>
-    </div>
-
-    <div id="zine-container">
-        <p id="loading">loading zine...</>
-    </div>
-
-    <!-- flipping to hater/lover graphic -->
-     <div id="zine-back">
-        <img id="hater_lover" src="hater_lover.png">
-    </div>
-
-    <!-- end of hater/lover graphic -->
-
-
-    <div id="subscribe-bar">
-        <button id="flip-btn" onclick="handleFlip()">unfold &amp; see the reverse ✨</button>
-        <div id="cut-line">✂ - - - - ✂ - - - - ✂ - - - - ✂</div>
-    </div>
-
-    <div id="bottom-bar">
-        <img src="favicon.png" alt="Unhinged" id="logo">
-        <a href="https://raw.githubusercontent.com/365hockeygirl/pwhl-rules-zine/main/rules_zine_final.pdf" download="PWHL-Rules-Zine.pdf" target="_blank" rel="noopener">download the zine 📄</a>
-        <a href="#" target="_blank" rel="noopener">folding instructions</a>
-        <a href="#" target="_blank" rel="noopener">text only version</a>
-        <a href="https://365hockeygirl.github.io/pwhl-quiz/pwhl-team-picker.html" target="_blank" rel="noopener" id="quiz-link">🔮 PWHL personality quiz!</a>
-        <div class="social-footer">
-            <a href="https://www.instagram.com/365_hockeygirl/" target="_blank" aria-label="Instagram">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M7 2C4.2 2 2 4.2 2 7v10c0 2.8 2.2 5 5 5h10c2.8 0 5-2.2 5-5V7c0-2.8-2.2-5-5-5H7zm5 5a5 5 0 110 10 5 5 0 010-10zm6.5-.8a1.3 1.3 0 11-2.6 0 1.3 1.3 0 012.6 0zM12 9a3 3 0 100 6 3 3 0 000-6z"/></svg>
-            </a>
-            <a href="https://www.tiktok.com/@365_hockeygirl" target="_blank" aria-label="TikTok">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M16 3c.3 1.7 1.7 3 3.5 3.2v2.3c-1.4-.1-2.7-.6-3.5-1.3v7.6a5.5 5.5 0 11-5.5-5.5c.3 0 .6 0 .9.1v2.3a3.2 3.2 0 102.3 3.1V3h2.3z"/></svg>
-            </a>
-            <a href="https://www.youtube.com/@365HockeyGirl" target="_blank" aria-label="YouTube">
-                <svg viewBox="0 0 24 24" fill="currentColor"><path d="M23 7s-.2-1.6-.8-2.3c-.7-.9-1.5-.9-1.9-1C17.7 3.5 12 3.5 12 3.5h0s-5.7 0-8.3.2c-.4 0-1.2.1-1.9 1C1.2 5.4 1 7 1 7S.8 8.9.8 10.7v1.6C.8 14 .9 15.9.9 15.9s.2 1.6.8 2.3c.7.9 1.6.9 2 .9 1.5.1 6.3.2 8.3.2s6.8 0 8.3-.2c.4 0 1.2-.1 1.9-1 .6-.7.8-2.3.8-2.3s.1-1.9.1-3.7v-1.6C23.2 8.9 23 7 23 7zM9.8 14.8V8.8l5.5 3-5.5 3z"/></svg>
-            </a>
-        </div>
-        <div style="height: 40px;"></div>
-    </div>
-
-</div>
-
-
-
-<script>
 // ============================================================
 // SETTINGS
 // ============================================================
@@ -378,16 +293,14 @@ document.head.appendChild(styleSheet) */
 */
 
 const params = new URLSearchParams(window.location.search);
-const cursorColor = params.get('cursor') || 'pink';
+const cursorColor = params.get('cursor');
 
-// Base cursor
-document.body.style.cursor = `url('cursors/${cursorColor}.png'), auto`;
+if (cursorColor) {
+  // Base cursor
+  document.body.style.cursor = `url('${cursorColor}.png'), auto`;
 
-// Hover cursor
-const style = document.createElement('style');
-style.textContent = `a, button { cursor: url('cursors/${cursorColor}-hover.png'), pointer !important; }`;
-document.head.appendChild(style);
-
-</script>
-</body>
-</html>
+  // Inject a <style> tag for hover states
+  const style = document.createElement('style');
+  style.textContent = `a, button { cursor: url('${cursorColor}-hover.png'), pointer !important; }`;
+  document.head.appendChild(style);
+}

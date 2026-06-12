@@ -299,7 +299,7 @@ li.depth-2:nth-child(even) img { transform: translateZ(-4px) scaleX(-1); }
 #flip-btn {
     display: inline-block;
     background: transparent;
-    color: #fff;
+    color: #000;
     border: none;
     cursor: pointer;
     padding: 12px 32px;
@@ -385,7 +385,7 @@ li.depth-2:nth-child(even) img { transform: translateZ(-4px) scaleX(-1); }
 }
 
 #cut-line {
-    color: rgba(255,255,255,0.6);
+    color: #000;
     font-size: 16px;
     letter-spacing: 3px;
     user-select: none;

@@ -12,8 +12,8 @@ html, body {
 /* a:hover, button:hover {
     cursor: url('cursors/pink-hover.png') 4 4, pointer;
 }*/
-a, button { 
-    cursor: url('cursors/pink-hover.png'), pointer !important; 
+a, button, img { 
+    cursor: url('cursors/pink-hover.png'), pointer; 
 }
 /* crinkle paper animation */
 
@@ -27,6 +27,19 @@ a, button {
     height: 100%;
     width: 5076px;
     animation: slide 240s linear infinite;
+    bottom:0;
+    left:-50%;
+    opacity:.5;
+    position:fixed;
+    right:-50%;
+    top:0;
+    z-index: 0;
+}
+
+.static-background {
+    background: url("crinkle_update.png") repeat-y;
+    height: 100%;
+    width: 5076px;
     bottom:0;
     left:-50%;
     opacity:.5;
@@ -90,18 +103,32 @@ h2 {
     width: 100%;
     overflow: hidden;
     margin: 10px 0;
-    min-height: 420px;
+    min-height: 500px;
+    height: 100%;
 }
 
+#zine-container-static {
+    flex: 1;
+    position: relative;
+    width: 100%;
+    margin: 10px 0;
+}
 @media (min-width: 601px) {
     #zine-container {
         min-height: 600px;
         max-width: 600px;
     }
+    #zine-container-static {
+        max-width: 1000px;
+    }
 }
 
 @media (max-width: 600px) {
     #zine-container {
+        padding: 0 16px;
+        margin: 10px 0;
+    }
+    #zine-container-static {
         padding: 0 16px;
         margin: 10px 0;
     }
@@ -301,7 +328,8 @@ li.depth-2:nth-child(even) img { transform: translateZ(-4px) scaleX(-1); }
     background: transparent;
     color: #000;
     border: none;
-    cursor: pointer;
+    /* cursor: pointer; */
+    cursor: url('cursors/pink-hover.png'), pointer; 
     padding: 12px 32px;
     border-radius: 10px;
     font-size: 14px;
@@ -428,3 +456,15 @@ li.depth-2:nth-child(even) img { transform: translateZ(-4px) scaleX(-1); }
     width: 100%;
     margin: auto;
 }
+
+.static-pages {
+    max-height: 300px;
+    height: 100%;
+}
+
+.page-left, .page-right {
+  margin: 0;
+  max-width: 450px;
+  width: 100%;
+}
+

@@ -37,14 +37,14 @@
 <div id="wrapper">
     <h1 id="zine-title">Unhinged Zine ✨</h1>
     <h2>click a page to flip it!</h2>
-    <h2><a href="">click here for static pages with alt text</a></h2>
+    <h2><a href="zine-static.html">click here for static pages with alt text</a></h2>
 
     <div id="flip-overlay">
         <p id="flip-overlay-text">unfolding and refolding...</p>
     </div>
 
     <div id="zine-container">
-        <p id="loading">loading zine...</>
+        <p id="loading">loading zine...</p>
     </div>
 
     <!-- flipping to hater/lover graphic -->
@@ -389,6 +389,7 @@ document.body.style.cursor = `url('cursors/${cursorColor}.png'), auto`;
 const style = document.createElement('style');
 style.textContent = `a, button { cursor: url('cursors/${cursorColor}-hover.png'), pointer !important; }`;
 document.head.appendChild(style);
+
 
 </script>
 </body>

@@ -49,7 +49,7 @@
 
     <!-- flipping to hater/lover graphic -->
      <div id="zine-back">
-        <img id="hater_lover" src="hater_lover.png">
+        <img id="hater_lover" src="hater_lover.png"  alt="In green and pink text over a picture of an orange cat: 'In order to be a true hater, you must undoubtably be a lover. Not many understand this. - @Madison_Tayt' made by @nowm33" title=" 'In order to be a true hater, you must undoubtably be a lover. Not many understand this. - @Madison_Tayt' made by @nowm33">
     </div>
 
     <!-- end of hater/lover graphic -->
@@ -158,8 +158,8 @@ function loadZine(folder) {
         updatePerspective();
 
         activeFolder = folder;
-        const btn = document.getElementById('flip-btn');
-        btn.textContent = folder === 'pages' ? 'unfold & see the reverse ✨' : 'refold the zine ✨';
+        //const btn = document.getElementById('flip-btn');
+        //btn.textContent = folder === 'pages' ? 'unfold & see the reverse ✨' : 'refold the zine ✨';
         hideOverlay();
     })
     .catch(err => {
@@ -170,7 +170,7 @@ function loadZine(folder) {
 //hide sparkles on load
 document.getElementById('sparkle-canvas').style.display = 'none';
 //hide zine-back on load
-//document.getElementById('zine-back').style.display = 'none';
+document.getElementById('zine-back').style.display = 'none';
 
 
 
@@ -186,6 +186,8 @@ let lastReverse = 'front';
 function showBack () {
     document.getElementById('zine-back').style.display = 'flex';
     document.getElementById('zine-container').style.display = 'none';
+    const btn = document.getElementById('flip-btn');
+    btn.textContent = 'refold the zine ✨';
 }
 
 document.getElementById('flip-btn').onclick = function() {

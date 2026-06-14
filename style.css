@@ -387,6 +387,16 @@ li.depth-2:nth-child(even) img { transform: translateZ(-4px) scaleX(-1); }
     display: flex;
 }
 
+/*hater lover*/
+#zine-back {
+    display: none;
+}
+
+#zine-back.active {
+    display: flex;
+}
+
+
 #flip-overlay-text {
     font-family: 'Roboto Mono', sans-serif;
     font-size: 22px;

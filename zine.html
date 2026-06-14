@@ -56,7 +56,7 @@
 
 
     <div id="subscribe-bar">
-        <button id="flip-btn" onclick="handleFlip()">unfold &amp; see the reverse ✨</button>
+        <button id="flip-btn">unfold &amp; see the reverse ✨</button>
         <div id="cut-line">✂ - - - - ✂ - - - - ✂ - - - - ✂</div>
     </div>
 
@@ -170,7 +170,9 @@ function loadZine(folder) {
 //hide sparkles on load
 document.getElementById('sparkle-canvas').style.display = 'none';
 //hide zine-back on load
-document.getElementById('zine-back').style.display = 'none';
+//document.getElementById('zine-back').style.display = 'none';
+
+
 
 // new flipping function for hater/lover graphic
 //function flipBack() {
@@ -178,9 +180,15 @@ document.getElementById('zine-back').style.display = 'none';
 //    btn.textContent = folder === 'pages' ? 'unfold & see the reverse ✨' : 'refold the zine ✨';
 //}
 
-let lastReverse = 'blue'; // so first flip gives red
+//let lastReverse = 'blue'; // so first flip gives red
+let lastReverse = 'front';
 
-function handleFlip() {
+function showBack () {
+    document.getElementById('zine-back').style.display = 'flex';
+    document.getElementById('zine-container').style.display = 'none';
+}
+
+document.getElementById('flip-btn').onclick = function() {
     const overlay = document.getElementById('flip-overlay');
     const overlayText = document.getElementById('flip-overlay-text');
 
@@ -192,18 +200,26 @@ function handleFlip() {
     sparkleRush = true;
     sparkleCanvas.style.zIndex = 101;
 
-    let next;
+    /*let next;
     if (activeFolder !== 'pages') {
         next = 'pages';
     } else {
         next = lastReverse === 'blue' ? 'pages-red' : 'pages-blue';
         lastReverse = next === 'pages-red' ? 'red' : 'blue';
-    }
+    }*/
 
-    setTimeout(() => {
-        loadZine(next);
+   setTimeout(() => {
+        showBack();
+        hideOverlay();
     }, 2200);
+
+
+    /*setTimeout(() => {
+        loadZine();
+    }, 2200);*/
 }
+
+
 
 function hideOverlay() {
     const overlay = document.getElementById('flip-overlay');

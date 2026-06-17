@@ -190,7 +190,14 @@ function showBack () {
     const btn = document.getElementById('flip-btn');
     btn.textContent = 'refold the zine ✨';
 }
-
+//new
+function showFront () {
+    document.getElementById('zine-back').style.display = 'none';
+    document.getElementById('zine-container').style.display = 'flex';
+    const btn = document.getElementById('flip-btn');
+    btn.textContent = 'unfold & see the reverse ✨';
+}
+//end new
 document.getElementById('flip-btn').onclick = function() {
     const overlay = document.getElementById('flip-overlay');
     const overlayText = document.getElementById('flip-overlay-text');
@@ -210,11 +217,25 @@ document.getElementById('flip-btn').onclick = function() {
         next = lastReverse === 'blue' ? 'pages-red' : 'pages-blue';
         lastReverse = next === 'pages-red' ? 'red' : 'blue';
     }*/
-
-   setTimeout(() => {
+   //new
+    const btn = document.getElementById('flip-btn');
+    if (btn.textContent == 'unfold & see the reverse ✨') {
+        setTimeout(() => {
         showBack();
         hideOverlay();
     }, 2200);
+    } else {
+        setTimeout(() => {
+        showFront();
+        hideOverlay();
+    }, 2200);
+    }
+   //end new
+//what was there
+   /*setTimeout(() => {
+        showBack();
+        hideOverlay();
+    }, 2200);*/
 
 
     /*setTimeout(() => {

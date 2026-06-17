@@ -192,6 +192,8 @@ function showBack () {
 }
 //new
 function showFront () {
+    // needs this first line so that it starts on page 1, otherwise it starts on page 4 when it flips back for some reason
+    loadZine('pages');
     document.getElementById('zine-back').style.display = 'none';
     document.getElementById('zine-container').style.display = 'flex';
     const btn = document.getElementById('flip-btn');
@@ -336,7 +338,7 @@ function drawStar(x, y, size, opacity) {
     sparkleCtx.save();
     sparkleCtx.translate(x, y);
     sparkleCtx.globalAlpha = opacity;
-    //sparkle color 1 - both were previously fff
+    //sparkle color green - both were previously fff
     sparkleCtx.fillStyle = '#6C8C3B';
     sparkleCtx.beginPath();
     for (let i = 0; i < 4; i++) {
@@ -373,8 +375,8 @@ function animateSparkles() {
         } else {
             sparkleCtx.save();
             sparkleCtx.globalAlpha = s.opacity;
-            //sparkle color
-            sparkleCtx.fillStyle = '#F272A1';
+            //sparkle color orange
+            sparkleCtx.fillStyle = '#F2913D';
             sparkleCtx.beginPath();
             sparkleCtx.arc(s.x, s.y, s.size / 2, 0, Math.PI * 2);
             sparkleCtx.fill();

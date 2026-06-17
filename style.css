@@ -393,7 +393,7 @@ li.depth-2:nth-child(even) img { transform: translateZ(-4px) scaleX(-1); }
 }
 
 #zine-back.active {
-    display:
+    display: flex;
 }
 
 

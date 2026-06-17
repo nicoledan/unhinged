@@ -315,7 +315,8 @@ function drawStar(x, y, size, opacity) {
     sparkleCtx.save();
     sparkleCtx.translate(x, y);
     sparkleCtx.globalAlpha = opacity;
-    sparkleCtx.fillStyle = '#fff';
+    //sparkle color 1 - both were previously fff
+    sparkleCtx.fillStyle = '#6C8C3B';
     sparkleCtx.beginPath();
     for (let i = 0; i < 4; i++) {
         const angle = (i / 4) * Math.PI * 2;
@@ -351,7 +352,8 @@ function animateSparkles() {
         } else {
             sparkleCtx.save();
             sparkleCtx.globalAlpha = s.opacity;
-            sparkleCtx.fillStyle = '#fff';
+            //sparkle color
+            sparkleCtx.fillStyle = '#F272A1';
             sparkleCtx.beginPath();
             sparkleCtx.arc(s.x, s.y, s.size / 2, 0, Math.PI * 2);
             sparkleCtx.fill();

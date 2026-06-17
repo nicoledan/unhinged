@@ -142,7 +142,7 @@ h2 {
         margin: 10px 0;
     }
     #zine-container-static {
-        padding: 0 16px;
+        /*padding: 0 16px;*/
         margin: auto;
         max-width: 300px;
     }
@@ -281,9 +281,10 @@ li.depth-2:nth-child(even) img { transform: translateZ(-4px) scaleX(-1); }
     width: auto;
 }
 
+/*not the last button */
 #bottom-bar > a:not(#quiz-link) {
     display: inline-block;
-    background: linear-gradient(135deg, #ff66c4, #5170ff);
+    background: linear-gradient(135deg, #6C8C3B, #F2913D);
     color: #fff;
     text-decoration: none;
     padding: 12px 32px;

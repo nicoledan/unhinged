@@ -520,4 +520,32 @@ ul.instructions {
 li.printing {
     position: relative;
     width: auto;
+    list-style-position: inside;
+}
+
+.orange {
+    color: #FFA500;
+    font-weight: bold;
+}
+
+.blue {
+    color: #0000FF;
+    font-weight: bold;
+}
+
+.green {
+    color: #00FF00;
+    font-weight: bold;
+}
+
+hr {
+    border: 10px dashed #ff66c4;
+    border-radius: 5px;
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+.folding-image {
+    max-width: 650ox;
+    width: 100%;
 }

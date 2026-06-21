@@ -500,3 +500,24 @@ li.depth-2:nth-child(even) img { transform: translateZ(-4px) scaleX(-1); }
   width: 100%;
 }
 
+ul.instructions {
+    padding: 0;
+    margin: 0;
+    list-style: none;
+    list-style-image: url('favicons/favicon_4.png');
+    list-style-type: square;
+    position: relative;
+    top: 0; right: 0; left: 0; bottom: 0;
+    width: auto;
+    max-width: 600px;
+    height: auto;
+    transform-style: preserve-3d;
+    user-select: none;
+    perspective-origin: center;
+    perspective: 1000px;
+} 
+
+li.printing {
+    position: relative;
+    width: auto;
+}

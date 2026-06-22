@@ -509,7 +509,7 @@ ul.instructions {
     position: relative;
     top: 0; right: 0; left: 0; bottom: 0;
     width: auto;
-    max-width: 600px;
+    max-width: 700px;
     height: auto;
     transform-style: preserve-3d;
     user-select: none;
@@ -520,7 +520,7 @@ ul.instructions {
 li.printing {
     position: relative;
     width: auto;
-    list-style-position: inside;
+    list-style-position: outside;
 }
 
 .orange {
@@ -547,5 +547,31 @@ hr {
 
 .folding-image {
     max-width: 650ox;
+    width: 100%;
+}
+
+
+/* same as other button styling, condense later */
+#download-link {
+    display: inline-block;
+    background: linear-gradient(135deg, #6C8C3B, #F2913D);
+    color: #fff;
+    text-decoration: none;
+    padding: 12px 32px;
+    border-radius: 10px;
+    font-size: 14px;
+    font-family: 'Roboto Mono', sans-serif;
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+#button-container {
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    padding: 6px 16px 0;
     width: 100%;
 }
